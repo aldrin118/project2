@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reservation Page</title>
+</head>
+<body>     
+    <h1>Parking App</h1>
+    <br/>
+    <h2>Reservation: </h2>
+    <h2 name="slot"></h2>
+    <form action="{{ url_for('removeReserve') }}"  method="post">
+        {% if reservation|count != 14 %}
+            {% for reserved in reservation %}
+                <h3>ID: {{reserved['id']}}</h3>
+                <h3>Price: ${{reserved['price']}}</h3>
+                <h3>Expire At: {{reserved['expiry']}}</h3>
+                <hr>
+            {% endfor %}
+            <input type="submit" value="Remove">
+        {% else %}
+            <h3>No Reservation</h3>
+            <input type="submit" value="Remove" disabled>
+        {% endif %}
+
+    </form>
+    <br>
+    <a href="/main"><input type=submit name=back value="Back"></a>
+</body>
+</html>

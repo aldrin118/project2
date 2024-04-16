@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Make Reservation Page</title>
+</head>
+<body> 
+    <h1>Parking App</h1>
+    <br/>
+    <form  method="post">
+        <input type="hidden" name="slotNum" value="{{slot}}">    
+        <h2>Make reservation for: {{slot}} , {{type['slot type is ']}}</h2></h2> 
+        <h3>Price: 
+            {% if type['slot type is'] == inner %}
+                $2.35
+            {% else %}
+                $4.32
+            {% endif %}
+        </h3>
+        <strong >Hours:</strong>
+        <input type="number" name="hours">
+        <br>
+        <br>
+        <input type="submit" value="Reserve">
+    </form>
+    <br>
+    <a href="/main"><input type=submit name=back value="Back"></a>
+</body>
+</html>

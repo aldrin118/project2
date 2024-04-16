@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parking Page</title>
+</head>
+<body>
+    <h1>Parking</h1>
+    <h3>Select Parking lot: </h3>
+    <h3> Available Slots: </h3>
+    <form method="post">
+        <select name="slots" id="slots">
+            {% for link in links %}
+                <option value={{link['id']}}>{{link['id']}} , {{link['type']}}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Reserve">
+    </form>
+    <br>
+    <a href="/main"><input type=submit name=back value="Back"></a>
+
+</body>
+</html> 
